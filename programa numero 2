@@ -1,0 +1,37 @@
+def bubble_sort(arr):
+    """Ordena una lista usando el algoritmo Bubble Sort."""
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+def ordenar_fila_matriz(matriz, fila):
+    """Ordena una fila específica de la matriz en orden ascendente."""
+    if 0 <= fila < len(matriz):  # Verificar si la fila es válida
+        bubble_sort(matriz[fila])  # Ordenar la fila seleccionada
+    else:
+        print("⚠ La fila ingresada no es válida.")
+
+# Matriz 3x3 inicial
+matriz = [
+    [30, 10, 20],
+    [90, 50, 40],
+    [70, 60, 80]
+]
+
+# Fila a ordenar (por ejemplo, la fila 1)
+fila_a_ordenar = 1
+
+# Mostrar matriz original
+print("📌 Matriz original:")
+for fila in matriz:
+    print(fila)
+
+# Ordenar la fila específica
+ordenar_fila_matriz(matriz, fila_a_ordenar)
+
+# Mostrar matriz después de ordenar la fila
+print("\n✅ Matriz con la fila ordenada:")
+for fila in matriz:
+    print(fila)
